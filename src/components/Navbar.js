@@ -8,6 +8,7 @@ const Navbar = () => {
       <Link to="/">ホーム</Link>
       <Link to="/createpost">記事投稿</Link>
       <Link to="/login">ログイン</Link>
+      <div>{process.env.TEST_TEXT}</div>
     </nav>
   );
 };
