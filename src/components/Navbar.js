@@ -8,7 +8,7 @@ import {
   faArrowRightToBracket,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = ({ isAuth }) => {
   return (
     <nav>
       <Link to="/">

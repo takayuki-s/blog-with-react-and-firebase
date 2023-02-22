@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
 const Logout = ({ setIsAuth }) => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const logout = () => {
     signOut(auth).then(() => {
       localStorage.clear();
