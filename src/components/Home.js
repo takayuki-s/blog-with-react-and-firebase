@@ -4,7 +4,7 @@ import { db } from '../firebase';
 import './Home.css';
 
 const Home = () => {
-  const [postList, setPostList] = useState();
+  const [postList, setPostList] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(collection(db, 'posts'));
@@ -19,7 +19,7 @@ const Home = () => {
     <div className="homePage">
       {postList.map((post) => {
         return (
-          <div className="postContents" kye={post.id}>
+          <div className="postContents" key={post.id}>
             <div className="postHeader">
               <h1>{post.title}</h1>
             </div>
