@@ -11,13 +11,14 @@ const Home = () => {
       // console.log(data);
       // console.log(data.docs);
       // console.log(data.docs.map((doc) => ({ ...doc.data() })));
-      setPostList(data.docs.map((doc) => ({ ...doc.data() })));
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getPosts();
   }, []);
 
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, 'posts', id));
+    window.location.href = '/';
   };
 
   return (
