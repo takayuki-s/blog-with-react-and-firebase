@@ -18,7 +18,7 @@ const Home = () => {
 
   const handleDelete = async (id) => {
     await deleteDoc(doc(db, 'posts', id));
-    window.location.href = '/';
+    setPostList(postList.filter((post) => post.id !== id));
   };
 
   return (
